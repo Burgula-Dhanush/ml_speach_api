@@ -22,7 +22,7 @@ with open('Emotion_Voice_Detection_Model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
-@app.post("/upload")
+@app.post("/")
 async def upload_file(audio_file: UploadFile = File(...), mfcc: bool = True):
     # Check if the file is empty
     if not audio_file:
